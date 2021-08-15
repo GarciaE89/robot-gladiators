@@ -1,4 +1,4 @@
-alert("Welcome to Robot Gladiators!");
+
 
 var playerName = prompt("What is your robot's name?");
 var playerHealth = 100;
@@ -77,10 +77,16 @@ var fight = function (enemyName) {
     if(playerHealth > 0){
         alert("Welcome to Robot Gladiators! Round " + (i + 1));
     }
+    else {
+        alert("You have lost your robot in battle! Game over!");
+        break;
+    }
+    // pick new enemy name to fight based on the index of the enemyNames array
     var pickedEnemyName = enemyNames[i];
+    // reset enemyHealth before starting new fight
     enemyHealth = 50;
 
-    // call fight function with enemy-robot
+    // pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter. Fight function is called. 
     fight(pickedEnemyName);
 
 }
